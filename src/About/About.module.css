@@ -1,0 +1,171 @@
+/* About.module.css */
+.aboutContainer {
+           /* Hug height */
+    padding: 50px 0 50px 0 ;  /* Top/Bottom: 50px, Left/Right: 290px */
+    gap: 10px;            /* Gap between child elements */
+    display: flex;        /* Flex display to align inner elements if needed */
+    flex-direction: column; /* Ensures elements stack vertically */
+    align-items: center;  /* Center items horizontally */
+  }
+  
+  
+  .headerAboutContainer {
+    width: 1340px;
+    height: 63px;                /* Высота, которая обнимает контент */
+    gap: 0px;                    /* Отсутствие промежутков между элементами */
+    border-radius: 16px 0 0 0;   /* Скругленные углы только сверху слева */
+    display: flex;               /* Flexbox для выравнивания */
+    justify-content: space-between; /* Пространство между элементами */
+    align-items: center;         /* Вертикальное выравнивание по центру */
+
+  }
+  
+  
+  .text {
+    font-family: 'Poppins', sans-serif; /* Шрифт Poppins */
+    font-size: 42px;                    /* Размер шрифта */
+    font-weight: 500;                   /* Толщина шрифта */
+    line-height: 63px;                  /* Высота строки для центрирования по вертикали */
+    text-align: left;                   /* Выравнивание текста по левому краю */
+    text-underline-position: from-font; /* Позиция подчеркивания по умолчанию шрифта */
+    text-decoration-skip-ink: none;     /* Подчеркивание не пропускает чернила */
+    color: rgba(0, 51, 102, 1); /* Цвет фона: темно-синий */                       /* Цвет текста - белый */
+  }
+  
+  .headerAboutSubContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .aboutHeaderImg {
+    width: 40px;                     /* Фиксированная ширина 40px */
+    height: 40px;                    /* Фиксированная высота 40px */
+    padding: 14px;             /* Внутренний отступ: верх 14px, остальные - 0 */
+    gap: 10px;                       /* Промежуток между элементами (если применимо) */
+    object-fit: cover;               /* Масштабирование изображения, чтобы оно заполнило контейнер */
+  }
+  
+  
+  .learnMore {
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    font-size: 20px;                       /* Размер шрифта */
+    font-weight: 500;                      /* Толщина шрифта (Medium) */
+    line-height: 30px;                     /* Высота строки */
+    text-align: left;                      /* Выравнивание по левому краю */
+    color: rgba(52, 52, 52, 1);            /* Цвет текста - темно-серый */
+    text-underline-position: from-font;    /* Позиция подчеркивания по умолчанию шрифта */
+    text-decoration-skip-ink: none;        /* Подчеркивание не пропускает чернила */
+    cursor: pointer;                       /* Указатель при наведении мышью (стандартно для ссылок) */
+  }
+  
+  
+  .aboutSubContainer {
+    height: 575px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .aboutSubIMG {
+    height: 575px;             /* Фиксированная высота */
+    width: 655px;
+    gap: 24px;                 /* Промежуток (если применяется в контексте flex/grid) */
+    object-fit: cover;        
+  }
+  
+  
+  .aboutAcademyContainer {
+    
+    height: 333px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .cardContainer {
+    
+    background: rgba(0, 51, 102, 1);  /* Темно-синий цвет фона */
+    border-radius: 14px;  /* Example background color */
+    width: 660px;
+    height: 333px;
+    padding: 15px;
+
+  }
+  
+  .cardText {
+    margin: 25px;
+    height: 145px;
+    width: 594px;
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    font-size: 18px;                       /* Размер шрифта */
+    font-weight: 400;                      /* Толщина шрифта (Regular) */
+    line-height: 27px;                     /* Высота строки для удобочитаемости */
+    text-align: left;                      /* Выравнивание текста по левому краю */
+    text-underline-position: from-font;    /* Позиция подчеркивания по умолчанию шрифта */
+    text-decoration-skip-ink: none;        /* Подчеркивание не пропускает чернила */
+    color: rgba(251, 251, 251, 1);         /* Белый цвет текста */
+    
+  }
+  
+  
+  .paragraph {
+    margin: 25px;
+    font-family: 'Poppins', sans-serif;    /* Шрифт Poppins */
+    font-size: 36px;                       /* Размер шрифта */
+    font-weight: 500;                      /* Толщина шрифта (Medium) */
+    line-height: 54px;                     /* Высота строки для комфортного чтения */
+    text-align: left;                      /* Выравнивание по левому краю */
+    text-underline-position: from-font;    /* Позиция подчеркивания по умолчанию шрифта */
+    text-decoration-skip-ink: none;        /* Подчеркивание не пропускает чернила */
+    color: rgba(251, 251, 251, 1); /* Фон: светло-серый */
+    border-radius: 8px;                    /* Опционально: скругленные углы */
+  }
+  
+  
+  .cardTextContainer {
+    
+    display: flex;
+    gap: 20px;
+  }
+  
+
+  
+  .frame260 {
+    width: 304px;
+    height: 160px;
+    background: rgba(0, 51, 102, 1);
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+  
+  
+  .infoTitle {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;  /* Шрифт Poppins */
+    font-size: 42px;                     /* Размер шрифта */
+    font-weight: 500;                    /* Толщина шрифта (500) */
+    line-height: 63px;                   /* Высота строки */
+    text-align: center;                  /* Выравнивание по центру */
+    text-underline-position: from-font;  /* Позиция подчеркивания по умолчанию шрифта */
+    text-decoration-skip-ink: none;      /* Подчеркивание не пропускает чернила */
+    color: rgba(251, 251, 251, 1);
+  }
+  
+  .infoSubtitle {
+    width: 166px;
+    font-family: 'Roboto', sans-serif;     /* Шрифт Roboto */
+    font-size: 18px;                       /* Размер шрифта */
+    font-weight: 400;                      /* Толщина шрифта (Regular) */
+    line-height: 27px;                     /* Высота строки для удобочитаемости */
+    text-align: center;                    /* Центрирование текста */
+    text-underline-position: from-font;    /* Позиция подчеркивания по умолчанию шрифта */
+    text-decoration-skip-ink: none;        /* Подчеркивание не пропускает чернила */
+    color: rgba(251, 251, 251, 1);         /* Белый цвет текста */
+  }
+  

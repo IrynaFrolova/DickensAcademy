@@ -1,0 +1,208 @@
+.testimonials-container {
+    height: 551px;
+    gap: 0px;
+    background: rgba(251, 251, 251, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.testimonial-content {
+    width: 1340px;
+    height: 454px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+  
+.testimonial-header {
+    width: 100%;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    padding: 0 20px;
+}
+  
+.testimonial-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 63px;
+    text-align: left;
+    color: rgba(0, 51, 102, 1);
+    margin: 0;
+}
+  
+.testimonial-body {
+    width: 100%;
+    height: 371px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 0px 0px 16px 16px;
+}
+  
+.testimonial-main {
+    width: 100%;
+    height: 265px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+  
+.testimonial-subcontainer {
+    width: 658px;
+    height: 265px; 
+    border: 1px solid rgba(0, 51, 102, 1);
+    display: flex;
+    align-self: center;
+    gap: 20px;
+    border-radius: 12px;
+    background: rgba(251, 251, 251, 1);
+}
+
+.testimonial-image {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height: 225px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+  
+.testimonial-image img {
+    width: 200px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.testimonial-description {
+    margin-top: 20px;
+    width: 340px;
+    height: 218px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7); 
+}
+
+.testimonial-name {
+    width: 120px; 
+    height: 82px; 
+    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.testimonial-name .name {
+    color: rgba(52, 52, 52, 1);
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    width: 62px;
+    height: 30px;
+}
+
+.testimonial-name .role {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(107, 107, 107, 1);
+    width: 69px;
+    height: 24px;
+}
+
+
+.testimonial-name .stars {
+    width: 120px;
+    height: 24px;
+    background-image: url('./stars.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial-text {
+    width: 340px;
+    height: 120px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    border-radius: 8px;
+  }
+
+.testimonial-button {
+    width: 221px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    border: 1px solid rgba(191, 204, 216, 1);
+    cursor: pointer;
+}
+  
+.testimonial-button p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(0, 51, 102, 1);
+    font-size: 16px;
+    font-weight: 500;
+}
+  
+.testimonial-button .image1 {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 46px;
+}
+
+.testimonial-button .image1 img{
+    width: 32px;
+    height: 32px;
+}
+
+.testimonial-button .image2 {
+    width: 69px;
+    height: 4px;
+    gap: 2px;
+    background-image: url('./2.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.testimonial-button .image3 img {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 46px;
+}
+
+.testimonial-button .image3 img {
+    width: 32px;
+    height: 32px;
+}
