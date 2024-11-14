@@ -35,7 +35,8 @@ jobs:
           jekyll build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4  # Latest stable version
-        with:
-          branch: main
-          folder: docs
+      uses: JamesIves/github-pages-deploy-action@v4  # Use the latest stable version
+      with:
+      branch: main
+      folder: docs
+
