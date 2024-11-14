@@ -25,4 +25,5 @@ jobs:
       run: npm run build
 
     - name: Move build to /docs folder
+      run: mkdir /docs
       run: mv ./build/* /docs/  # или путь к папке, в которую перемещаются ваши собранные файлы
