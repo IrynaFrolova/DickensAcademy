@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # или 'master', если вы используете такую ветку
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Переносим index.html в папку docs
+      - name: Move index.html to /docs
+        run: |
+          mkdir -p docs
+          mv index.html docs/
+
+      # Устанавливаем Git для работы с GitHub Pages
+      - name: Set up Git
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+
+      # Коммитим изменения и пушим их в репозиторий
+      - name: Commit and push changes
+        run: |
+          git add docs/index.html
+          git commit -m "Move index.html to docs folder for GitHub Pages"
+          git push
+
+      # Настроим GitHub Pages для использования папки docs
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.0
+        with:
+          branch: main  # или 'master', в зависимости от вашей ветки
+          folder: docs
