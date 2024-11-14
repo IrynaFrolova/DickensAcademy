@@ -1,42 +1,41 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - main
+      - main  # Можно изменить на вашу основную ветку
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Выбираем OS для запуска
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    # 1. Проверяем репозиторий
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      # Ensure assets and scss are correctly available
-      - name: Move index.html to docs
-        run: |
-          mkdir -p docs
-          mv index.html docs/
-
-      # Setup Ruby environment and Jekyll build
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-
-      - name: Install dependencies
-        run: |
-          gem install jekyll bundler
-          bundle install
-
-      - name: Build site
-        run: |
-          jekyll build
-
-      - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4  # Use the latest stable version
+    # 2. Устанавливаем зависимости
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-      branch: main
-      folder: docs
+        node-version: '16'  # Укажите версию Node.js, которую используете
 
+    - name: Install dependencies
+      run: npm install
+
+    # 3. Выполняем сборку проекта
+    - name: Build the project
+      run: npm run build
+
+    # 4. Копируем результаты сборки в папку /doc
+    - name: Copy build to /doc
+      run: |
+        mkdir -p doc
+        cp -r dist/* doc/  # Если сборка сохраняется в папку dist, замените на нужную папку
+
+    # 5. Публикуем изменения в ветке gh-pages (если хотите опубликовать сайт)
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc  # Публикуем папку /doc
