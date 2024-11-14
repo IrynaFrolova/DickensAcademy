@@ -24,5 +24,14 @@ jobs:
     - name: Run npm build
       run: npm run build
 
+    - name: Create /docs folder if not exists
+      run: mkdir -p docs  # создаем папку docs, если она не существует
+
     - name: Move build to /docs folder
-      run: mv ./build/* ../docs/  # или путь к папке, в которую перемещаются ваши собранные файлы
+      run: mv ./build/* ./docs/  # предполагается, что сборка находится в ./build/
+
+    - name: Commit and push changes (if needed)
+      run: |
+        git add docs/
+        git commit -m "Deploy build to /docs"
+        git push
