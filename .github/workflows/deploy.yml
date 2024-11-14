@@ -3,64 +3,26 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Ветка для пуша, по умолчанию main
+      - main  # или другая ветка, при пуше в которую хотите запускать сборку
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Выбор ОС
+    runs-on: ubuntu-latest
 
     steps:
-    # 1. Проверяем репозиторий
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    # 2. Устанавливаем Node.js
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'  # Версия Node.js
+        node-version: '16'  # используйте нужную версию Node.js
 
-    # 3. Устанавливаем зависимости
     - name: Install dependencies
       run: npm install
 
-    # 4. Выполняем сборку проекта
-    - name: Build the project
+    - name: Run npm build
       run: npm run build
 
-    # 5. Выводим содержимое текущей папки для диагностики
-    - name: List files after build
-      run: ls -R
-
-    # 6. Проверяем существование папки сборки
-    - name: Check if build folder exists
-      run: |
-        if [ -d "dist" ]; then
-          echo "Found dist folder"
-        elif [ -d "build" ]; then
-          echo "Found build folder"
-        else
-          echo "No build folder found!"
-          exit 1
-        fi
-
-    # 7. Копируем результат сборки в /doc
-    - name: Copy build to /doc
-      run: |
-        mkdir -p doc
-        # Проверяем папку сборки и копируем файлы
-        if [ -d "dist" ]; then
-          cp -r dist/* doc/
-        elif [ -d "build" ]; then
-          cp -r build/* doc/
-        else
-          echo "No build directory found. Skipping copy."
-          exit 1
-        fi
-
-    # 8. Публикуем на GitHub Pages
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./doc
+    - name: Move build to /doc folder
+      run: mv ./build/* ./doc/  # или путь к папке, в которую перемещаются ваши собранные файлы
