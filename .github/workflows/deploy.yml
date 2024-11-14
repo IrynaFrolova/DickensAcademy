@@ -30,8 +30,4 @@ jobs:
     - name: Move build to /docs folder
       run: mv ./build/* ./docs/  # предполагается, что сборка находится в ./build/
 
-    - name: Commit and push changes (if needed)
-      run: |
-        git add docs/
-        git commit -m "Deploy build to /docs"
-        git push
+    
